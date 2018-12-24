@@ -99,6 +99,9 @@ def pg_parameter():     # 数据库的基本参数
     cur = pg.ExecQuery("show hba_file")
     pg_hba_file = cur.fetchone()
     print "-->  hba_file = ",pg_hba_file[0]
+    cur = pg.ExecQuery("show autovacuum")
+    pg_auto_vacuum = cur.fetchone()
+    print "-->  autovacuum = ",pg_auto_vacuum[0]
     return
 
 def pg_database():
